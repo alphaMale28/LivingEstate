@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+    <g class="logo-group">
+        <rect
+            x="30"
+            y="30"
+            width="240"
+            height="240"
+            class="logo-box"
+        />
+
+        <text
+            x="150"
+            y="152"
+            class="logo-text"
+        >LE</text>
+    </g>
+
+    <style>
+        .logo-box {
+            fill: none;
+            stroke: #18352f;
+            stroke-width: 10;
+        }
+
+        .logo-text {
+            fill: #18352f;
+            font-family: Georgia, serif;
+            font-size: 100px;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+    </style>
+</svg>

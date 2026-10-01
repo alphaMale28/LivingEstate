@@ -1,0 +1,264 @@
+@use "../../styles/responsive.scss" as *;
+
+.updateProfilePage {
+    min-height: 100vh;
+    background: $background;
+    color: $forest;
+
+    .updateHeader {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 70px 5% 65px;
+
+        .backLink {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: $muted;
+            text-decoration: none;
+            font-size: 12px;
+            margin-bottom: 60px;
+
+            &:hover {
+                color: $forest;
+            }
+        }
+
+        .eyebrow {
+            display: block;
+            margin-bottom: 14px;
+            color: $champagne;
+        }
+
+        h1 {
+            font-family: $display-font;
+            font-weight: 400;
+            font-size: clamp(52px, 7vw, 86px);
+            line-height: 0.9;
+
+            span {
+                color: $champagne;
+            }
+        }
+
+        p {
+            max-width: 550px;
+            color: $muted;
+            line-height: 1.7;
+            margin-top: 25px;
+        }
+    }
+
+    .updateContent {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 5% 100px;
+    }
+
+    .formSection {
+        padding: 60px 0;
+        border-top: 1px solid $line;
+    }
+
+    .formSectionHeading {
+        display: flex;
+        gap: 22px;
+        margin-bottom: 40px;
+
+        > span {
+            color: $champagne;
+            font-size: 12px;
+        }
+
+        .eyebrow {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-family: $display-font;
+            font-size: 40px;
+            font-weight: 400;
+        }
+    }
+
+    .avatarEditor {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: $background;
+        // background: $sand;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .avatarEditor label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        border: 1px solid $line;
+        padding: 12px 17px;
+        font-size: 12px;
+
+        &:hover {
+            border-color: $forest;
+        }
+    }
+
+    .avatarEditor input {
+        display: none;
+    }
+
+    .avatarEditor p {
+        color: $muted;
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+    .formGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 20px;
+    }
+
+    label > span {
+        display: block;
+        margin-bottom: 9px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: $muted;
+    }
+
+    .fullWidth {
+        grid-column: 1 / -1;
+    }
+
+    .inputWrap {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $line;
+        height: 52px;
+
+        svg {
+            color: $champagne;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: $forest;
+            font-size: 14px;
+        }
+
+        &:focus-within {
+            border-color: $forest;
+        }
+    }
+
+    textarea {
+        width: 100%;
+        resize: vertical;
+        border: 1px solid $line;
+        background: transparent;
+        padding: 16px;
+        outline: none;
+        font: inherit;
+        color: $forest;
+
+        &:focus {
+            border-color: $forest;
+        }
+    }
+
+    .formActions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        padding-top: 35px;
+        border-top: 1px solid $line;
+
+        a,
+        button {
+            height: 50px;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        a {
+            color: $forest;
+            border: 1px solid $line;
+        }
+
+        button {
+            border: 0;
+            background: $forest;
+            color: $background;
+
+            &:hover {
+                background: $forest-dark;
+            }
+        }
+    }
+
+    @include md {
+        .formGrid {
+            grid-template-columns: 1fr;
+        }
+
+        .fullWidth {
+            grid-column: auto;
+        }
+    }
+
+    @include sm {
+        .updateHeader {
+            padding-top: 50px;
+
+            .backLink {
+                margin-bottom: 45px;
+            }
+        }
+
+        .formSectionHeading h2 {
+            font-size: 32px;
+        }
+
+        .avatarEditor {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .formActions {
+            flex-direction: column-reverse;
+
+            a,
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

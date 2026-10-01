@@ -1,0 +1,381 @@
+@use "../../styles/responsive.scss" as *;
+
+.addPostPage {
+    min-height: 100vh;
+    background: $background;
+    color: $forest;
+
+    .addPostHeader {
+        max-width: 1150px;
+        margin: 0 auto;
+        padding: 70px 5% 75px;
+
+        .backLink {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: $muted;
+            text-decoration: none;
+            font-size: 12px;
+            margin-bottom: 60px;
+        }
+
+        .eyebrow {
+            display: block;
+            color: $champagne;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            max-width: 900px;
+            font-family: $display-font;
+            font-size: clamp(55px, 7vw, 92px);
+            line-height: 0.9;
+            font-weight: 400;
+
+            span {
+                color: $champagne;
+            }
+        }
+
+        p {
+            max-width: 570px;
+            color: $muted;
+            line-height: 1.7;
+            margin-top: 28px;
+        }
+    }
+
+    .addPostContent {
+        max-width: 1150px;
+        margin: 0 auto;
+        padding: 0 5% 100px;
+    }
+
+    .formSection {
+        border-top: 1px solid $line;
+        padding: 70px 0;
+    }
+
+    .sectionHeading {
+        display: flex;
+        gap: 22px;
+        margin-bottom: 45px;
+
+        > span {
+            color: $champagne;
+            font-size: 12px;
+        }
+
+        .eyebrow {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-family: $display-font;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 400;
+        }
+    }
+
+    .formGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 20px;
+    }
+
+    .fourColumns {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .full {
+        grid-column: 1 / -1;
+    }
+
+    label > span {
+        display: block;
+        color: $muted;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 10px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        border: 1px solid $line;
+        background: transparent;
+        color: $forest;
+        outline: none;
+        font: inherit;
+        padding: 15px 16px;
+        transition: 0.25s ease;
+
+        &:focus {
+            border-color: $forest;
+            background: $surface;
+        }
+    }
+
+    select {
+        height: 52px;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    .purposeSwitch {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border: 1px solid $line;
+
+        button {
+            height: 51px;
+            border: 0;
+            background: transparent;
+            color: $muted;
+            cursor: pointer;
+
+            &.active {
+                background: $forest;
+                color: $background;
+            }
+        }
+    }
+
+    .inputIcon {
+        display: flex;
+        align-items: center;
+        border: 1px solid $line;
+
+        svg {
+            margin-left: 16px;
+            color: $champagne;
+        }
+
+        input {
+            border: 0;
+        }
+    }
+
+    .amenities {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid $line;
+            background: transparent;
+            color: $forest;
+            padding: 14px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 12px;
+
+            span {
+                width: 25px;
+                height: 25px;
+                border: 1px solid $line;
+                display: grid;
+                place-items: center;
+                color: $champagne;
+            }
+
+            &.selected {
+                border-color: $forest;
+                background: $surface;
+            }
+        }
+    }
+
+    .uploadArea {
+        min-height: 270px;
+        border: 1px dashed $line;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+
+        > svg {
+            width: 32px;
+            height: 32px;
+            color: $champagne;
+            margin-bottom: 18px;
+        }
+
+        strong {
+            font-family: $display-font;
+            font-size: 27px;
+            font-weight: 400;
+        }
+
+        span {
+            max-width: 400px;
+            margin-top: 8px;
+            color: $muted;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        small {
+            margin-top: 15px;
+            color: $muted;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        &:hover {
+            border-color: $champagne;
+        }
+    }
+
+    .selectedImages {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 15px;
+
+        > div {
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            button {
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                width: 30px;
+                height: 30px;
+                display: grid;
+                place-items: center;
+                border: 0;
+                background: $forest;
+                color: $background;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .publishArea {
+        padding: 30px;
+        background: $forest;
+        color: $background;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            > svg {
+                color: $champagne;
+                font-size: 25px;
+            }
+        }
+
+        strong {
+            font-family: $display-font;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        p {
+            margin-top: 4px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 11px;
+        }
+
+        button {
+            height: 50px;
+            padding: 0 22px;
+            border: 0;
+            background: $champagne;
+            color: $forest;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            cursor: pointer;
+        }
+    }
+
+    @include lg {
+        .fourColumns {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .amenities {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @include md {
+        .formGrid {
+            grid-template-columns: 1fr;
+        }
+
+        .full {
+            grid-column: auto;
+        }
+
+        .publishArea {
+            align-items: flex-start;
+            flex-direction: column;
+
+            button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .selectedImages {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @include sm {
+        .addPostHeader {
+            padding-top: 50px;
+
+            .backLink {
+                margin-bottom: 45px;
+            }
+        }
+
+        .formSection {
+            padding: 50px 0;
+        }
+
+        .fourColumns,
+        .amenities {
+            grid-template-columns: 1fr;
+        }
+
+        .selectedImages {
+            grid-template-columns: 1fr;
+        }
+    }
+}

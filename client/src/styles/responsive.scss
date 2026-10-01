@@ -1,0 +1,64 @@
+// COLORS
+
+$background: #f8f7f3;
+$surface: #efeee8;
+
+$forest: #18352f;
+$forest-dark: #102721;
+
+$text: #26312d;
+$muted: #69716d;
+
+$champagne: #b69b62;
+
+$white: #ffffff;
+
+// BORDERS
+
+$line: rgba(20, 32, 28, 0.14);
+$line-light: rgba(20, 32, 28, 0.07);
+
+// TYPOGRAPHY
+
+$display-font: "Cormorant Garamond", serif;
+$body-font: "Inter", sans-serif;
+
+// BREAKPOINTS
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// RESPONSIVE
+
+@mixin sm {
+    @media (max-width: $breakpoint-sm) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: $breakpoint-md) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: $breakpoint-lg) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (max-width: $breakpoint-xl) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (max-width: $breakpoint-xxl) {
+        @content;
+    }
+}

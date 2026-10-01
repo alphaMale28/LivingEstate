@@ -1,0 +1,571 @@
+// @use "../../styles/responsive.scss" as *;
+
+// .footer {
+//     background: $forest-dark;
+//     color: $white;
+// }
+
+// // FOOTER TOP
+
+// .footerTop {
+//     display: grid;
+//     grid-template-columns: 2fr 1fr 1fr 1.4fr;
+//     gap: 70px;
+//     padding: 85px 7% 75px;
+// }
+
+// .footerBrand {
+//     max-width: 330px;
+
+//     .logo {
+//         display: inline-block;
+//         margin-bottom: 22px;
+//         color: $white;
+//         font-size: 27px;
+//         font-weight: 600;
+//         letter-spacing: -1px;
+//         text-decoration: none;
+
+//         span {
+//             color: $muted;
+//         }
+//     }
+
+//     > p {
+//         max-width: 300px;
+//         margin: 0 0 28px;
+//         color: $muted;
+//         font-size: 13px;
+//         line-height: 1.7;
+//     }
+// }
+
+// // SOCIAL
+
+// .socialLinks {
+//     display: flex;
+//     gap: 9px;
+
+//     a {
+//         width: 36px;
+//         height: 36px;
+//         display: grid;
+//         place-items: center;
+//         border: 1px solid rgba($white, 0.2);
+//         border-radius: 50%;
+//         color: $muted;
+//         transition:
+//             background-color 0.2s ease,
+//             border-color 0.2s ease,
+//             color 0.2s ease;
+
+//         &:hover {
+//             border-color: $white;
+//             background: $white;
+//             color: $forest-dark;
+//         }
+//     }
+// }
+
+// // FOOTER COLUMNS
+
+// .footerColumn,
+// .footerContact {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+
+//     h3 {
+//         margin: 3px 0 22px;
+//         color: $white;
+//         font-size: 12px;
+//         font-weight: 600;
+//         letter-spacing: 0.12em;
+//         text-transform: uppercase;
+//     }
+
+//     a {
+//         margin-bottom: 14px;
+//         color: $muted;
+//         font-size: 13px;
+//         text-decoration: none;
+//         transition: color 0.2s ease;
+
+//         &:hover {
+//             color: $white;
+//         }
+//     }
+// }
+
+// // CONTACT
+
+// .footerContact {
+//     a,
+//     > div {
+//         display: flex;
+//         align-items: flex-start;
+//         gap: 10px;
+//     }
+
+//     svg {
+//         flex-shrink: 0;
+//         margin-top: 1px;
+//         color: $muted;
+//     }
+
+//     > div {
+//         color: $muted;
+//         font-size: 13px;
+//         line-height: 1.5;
+//     }
+// }
+
+// // NEWSLETTER
+
+// .footerNewsletter {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     gap: 50px;
+//     margin: 0 7%;
+//     padding: 45px 0;
+//     border-top: 1px solid rgba($white, 0.12);
+//     border-bottom: 1px solid rgba($white, 0.12);
+
+//     > div {
+//         span {
+//             color: $muted;
+//             font-size: 10px;
+//             font-weight: 600;
+//             letter-spacing: 0.15em;
+//         }
+
+//         h2 {
+//             margin: 8px 0 0;
+//             color: $white;
+//             font-size: 30px;
+//             font-weight: 400;
+//             letter-spacing: -1px;
+//         }
+//     }
+// }
+
+// .newsletterForm {
+//     width: min(100%, 440px);
+//     display: flex;
+//     border-bottom: 1px solid rgba($white, 0.3);
+
+//     input {
+//         min-width: 0;
+//         flex: 1;
+//         padding: 14px 5px;
+//         border: 0;
+//         outline: none;
+//         background: transparent;
+//         color: $white;
+//         font-size: 13px;
+
+//         &::placeholder {
+//             color: $muted;
+//         }
+//     }
+
+//     button {
+//         display: flex;
+//         align-items: center;
+//         gap: 7px;
+//         padding: 0 5px;
+//         border: 0;
+//         background: transparent;
+//         color: $white;
+//         font-size: 12px;
+//         cursor: pointer;
+//         transition: color 0.2s ease;
+
+//         &:hover {
+//             color: $muted;
+//         }
+//     }
+// }
+
+// // FOOTER BOTTOM
+
+// .footerBottom {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     gap: 20px;
+//     padding: 25px 7%;
+
+//     p,
+//     span {
+//         margin: 0;
+//         color: $muted;
+//         font-size: 11px;
+//     }
+// }
+
+// // LARGE TABLET
+
+// @include lg {
+//     .footerTop {
+//         grid-template-columns: 1.5fr 1fr 1fr;
+//         gap: 50px;
+//     }
+
+//     .footerContact {
+//         grid-column: 2 / -1;
+//     }
+// }
+
+// // TABLET
+
+// @include md {
+//     .footerTop {
+//         grid-template-columns: repeat(2, 1fr);
+//         gap: 45px 30px;
+//         padding: 70px 5%;
+//     }
+
+//     .footerContact {
+//         grid-column: auto;
+//     }
+
+//     .footerNewsletter {
+//         margin: 0 5%;
+//         flex-direction: column;
+//         align-items: flex-start;
+//         gap: 30px;
+//     }
+
+//     .newsletterForm {
+//         width: 100%;
+//     }
+
+//     .footerBottom {
+//         padding: 25px 5%;
+//     }
+// }
+
+// // MOBILE
+
+// @include sm {
+//     .footerTop {
+//         grid-template-columns: 1fr;
+//         gap: 40px;
+//         padding: 60px 20px 50px;
+//     }
+
+//     .footerBrand {
+//         max-width: 100%;
+//     }
+
+//     .footerColumn,
+//     .footerContact {
+//         grid-column: auto;
+//     }
+
+//     .footerNewsletter {
+//         margin: 0 20px;
+//         padding: 40px 0;
+//         gap: 25px;
+
+//         > div {
+//             h2 {
+//                 font-size: 27px;
+//             }
+//         }
+//     }
+
+//     .newsletterForm {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 12px;
+//         border-bottom: 0;
+
+//         input {
+//             width: 100%;
+//             padding: 14px 0;
+//             border-bottom: 1px solid rgba($white, 0.3);
+//         }
+
+//         button {
+//             justify-content: space-between;
+//             padding: 13px 0;
+//         }
+//     }
+
+//     .footerBottom {
+//         align-items: flex-start;
+//         flex-direction: column;
+//         padding: 25px 20px;
+//     }
+// }
+
+@use "../../styles/responsive.scss" as *;
+
+.footer {
+    background: $forest;
+    color: $white;
+
+    // TOP
+
+    .footerTop {
+        padding: 90px 7%;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 100px;
+
+        @include lg {
+            padding: 75px 5%;
+            grid-template-columns: 1fr;
+            gap: 70px;
+        }
+
+        @include sm {
+            padding: 60px 5%;
+            gap: 55px;
+        }
+    }
+
+    .footerBrand {
+        max-width: 420px;
+
+        .brand {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            gap: 11px;
+            color: $white;
+            text-decoration: none;
+
+            .brandMark {
+                width: 37px;
+                height: 37px;
+                display: flex;
+                align-items: center;
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                background-color: $champagne;
+                font-family: Georgia, serif;
+                font-size: 1rem;
+            }
+
+            div {
+                display: flex;
+                align-items: baseline;
+                gap: 4px;
+                font-family: Georgia, serif;
+
+                strong,
+                span {
+                    font-size: 1.1rem;
+                }
+
+                strong {
+                    font-weight: 600;
+                }
+
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+
+        > p {
+            max-width: 350px;
+            margin: 30px 0;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+        }
+
+        .footerExplore {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            width: fit-content;
+            padding-bottom: 6px;
+            color: $white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
+
+    // LINKS
+
+    .footerLinks {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+
+        @include sm {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 45px;
+        }
+
+        .linkColumn {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            > span {
+                margin-bottom: 10px;
+                color: $surface;
+                font-size: 0.65rem;
+                font-weight: 700;
+                letter-spacing: 0.14em;
+            }
+
+            a {
+                width: fit-content;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.78rem;
+                text-decoration: none;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: $white;
+                }
+
+                svg {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    // NEWSLETTER
+
+    .newsletter {
+        margin: 0 7%;
+        padding: 50px 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.13);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+
+        @include lg {
+            margin: 0 5%;
+        }
+
+        @include md {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        > div {
+            > span {
+                color: $surface;
+                font-size: 0.65rem;
+                font-weight: 700;
+                letter-spacing: 0.14em;
+            }
+
+            h3 {
+                margin: 15px 0 0;
+                font-family: Georgia, serif;
+                font-size: 2.2rem;
+                font-weight: 400;
+                line-height: 1;
+
+                em {
+                    display: block;
+                    color: $surface;
+                    font-style: italic;
+                }
+
+                @include sm {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        form {
+            width: min(100%, 430px);
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+            @include sm {
+                width: 100%;
+            }
+
+            input {
+                min-width: 0;
+                flex: 1;
+                height: 48px;
+                padding: 0;
+                border: 0;
+                outline: none;
+                background: transparent;
+                color: $white;
+                font-size: 0.8rem;
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.4);
+                }
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                border: 0;
+                background: transparent;
+                color: $white;
+                font-size: 0.75rem;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+
+    // BOTTOM
+
+    .footerBottom {
+        min-height: 75px;
+        padding: 0 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+
+        @include lg {
+            padding: 0 5%;
+        }
+
+        @include md {
+            padding: 25px 5%;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        p,
+        span,
+        a {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.65rem;
+        }
+
+        > div {
+            display: flex;
+            gap: 20px;
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
